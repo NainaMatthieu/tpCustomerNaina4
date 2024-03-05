@@ -1,6 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * Cette classe représente une entité Discount dans le système.
+ * Un Discount est un code de réduction associé à un taux de réduction.
  */
 package mg.itu.naina4.tp1.entity;
 
@@ -103,5 +103,5 @@ public class Discount implements Serializable {
     public String toString() {
         return "mg.itu.naina4.tp1.entity.Discount[ code=" + code + " ]";
     }
-    
+
 }

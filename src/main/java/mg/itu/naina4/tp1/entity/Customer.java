@@ -1,6 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * Cette classe représente une entité Customer dans le système.
+ * Un Customer est un client avec diverses informations telles que nom, adresse, téléphone, etc.
  */
 package mg.itu.naina4.tp1.entity;
 
@@ -208,5 +208,5 @@ public class Customer implements Serializable {
     public String toString() {
         return "mg.itu.naina4.tp1.entity.Customer[ customerId=" + customerId + " ]";
     }
-    
+
 }

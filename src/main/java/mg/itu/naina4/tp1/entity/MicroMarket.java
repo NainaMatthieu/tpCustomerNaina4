@@ -1,6 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * Cette classe représente une entité MicroMarket dans le système.
+ * Un MicroMarket est un marché avec des informations telles que le code postal, le rayon, la longueur de la zone et la largeur de la zone.
  */
 package mg.itu.naina4.tp1.entity;
 
@@ -124,5 +124,5 @@ public class MicroMarket implements Serializable {
     public String toString() {
         return "mg.itu.naina4.tp1.entity.MicroMarket[ zipCode=" + zipCode + " ]";
     }
-    
+
 }
