@@ -1,7 +1,7 @@
 /**
  * Façade pour gérer les Customers.
  *
- * @author xxxx
+ * @author NainaMatthieu
  */
 package mg.itu.naina4.tp1.service;
 
@@ -13,11 +13,6 @@ import jakarta.transaction.Transactional;
 import java.util.List;
 import mg.itu.naina4.tp1.entity.Customer;
 
-/**
- * Façade pour gérer les Customers.
- *
- * @author NainaMatthieu
- */
 @RequestScoped
 public class CustomerManager {
 
