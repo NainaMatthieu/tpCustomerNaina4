@@ -33,6 +33,7 @@ public class CustomerBean implements Serializable {
 
     /**
      * Retourne la liste des clients pour affichage dans une DataTable.
+     *
      * @return La liste des clients.
      */
     public List<Customer> getCustomers() {
@@ -40,5 +41,27 @@ public class CustomerBean implements Serializable {
             customerList = customerManager.getAllCustomers();
         }
         return customerList;
+    }
+
+    /**
+     * Compare deux objets Customer pour le tri par état puis par ville.
+     *
+     * @param o Le premier objet Customer à comparer
+     * @param b Le deuxième objet Customer à comparer
+     * @return Un entier négatif si le premier objet est situé avant le deuxième
+     * dans l'ordre de tri, zéro s'ils sont considérés comme égaux, ou un entier
+     * positif si le premier objet est situé après le deuxième. L'ordre de tri
+     * est déterminé en fonction de l'état, puis de la ville dans cet état.
+     */
+    public int trieParEtatPuisVille(Object o, Object b) {
+        Customer customer1 = (Customer) o;
+        Customer customer2 = (Customer) b;
+        int etatComp = customer1.getState().compareTo(customer2.getState());
+        if (etatComp != 0) {
+            return etatComp;
+        } else {
+            // Si les états sont égaux, on compare les villes dans cet état
+            return customer1.getCity().compareTo(customer2.getCity());
+        }
     }
 }
