@@ -21,7 +21,7 @@
                     <h:outputText value="#{item.customerId}"/>
                 </p:column>
 
-                <p:column sortBy="#{item.name}">
+                <p:column sortBy="#{item.name}" filterBy="#{item.name}" filterMatchMode="startsWith" >
                     <f:facet name="header">
                         <h:outputText value="Nom"/>
                     </f:facet>
@@ -34,10 +34,12 @@
                     </f:facet>
                     <h:outputText value="#{item.city}"/>
                 </p:column>
-                <!--Méthode de trie sur l'état puis par ville 1
-                 <p:column sortBy="#{item.state}, #{item.city}">  -->
+                <!--Méthode 1 de trie sur l'état puis par ville   
+                    <p:column sortBy="#{item.state}, #{item.city}" filterBy="#{item.state}" filterMatchMode="contains">  
+                -->
                 <!--Méthode 2-->
-                <p:column  sortBy="#{item}" sortFunction="#{customerBean.trieParEtatPuisVille}">
+                <p:column  sortBy="#{item}" sortFunction="#{customerBean.trieParEtatPuisVille}" filterBy="#{item.state}" filterMatchMode="startsWith"> 
+
                     <f:facet name="header">
                         <h:outputText value="Etat"/>
                     </f:facet>
