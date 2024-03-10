@@ -29,7 +29,7 @@ import java.util.Collection;
 @Table(name = "discount")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Discount.findAll", query = "SELECT d FROM Discount d"),
+    @NamedQuery(name = "Discount.findAll", query = "SELECT d FROM Discount d order by d.rate desc"),
     @NamedQuery(name = "Discount.findByCode", query = "SELECT d FROM Discount d WHERE d.code = :code"),
     @NamedQuery(name = "Discount.findByRate", query = "SELECT d FROM Discount d WHERE d.rate = :rate")})
 public class Discount implements Serializable {
@@ -101,7 +101,9 @@ public class Discount implements Serializable {
 
     @Override
     public String toString() {
-        return "mg.itu.naina4.tp1.entity.Discount[ code=" + code + " ]";
+        return "Discount{" + "code=" + code + ", rate=" + rate + '}';
     }
+
+   
 
 }

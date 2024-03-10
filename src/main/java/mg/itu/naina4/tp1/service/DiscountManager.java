@@ -12,6 +12,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 import jakarta.persistence.Query;
+import java.util.Comparator;
 
 /**
  *
@@ -26,6 +27,30 @@ public class DiscountManager {
     public List<Discount> getAllDiscounts() {
         Query query = em.createNamedQuery("Discount.findAll");
         return query.getResultList();
+    }
+
+    /**
+     * Récupère tous les Discount et les trie par ordre croissant de taux de
+     * réduction.
+     *
+     * @return Une liste triée par ordre croissant des objets Discount.
+     */
+    public List<Discount> getAllDiscountsAsc() {
+        List<Discount> discounts = getAllDiscounts();
+        discounts.sort(Comparator.comparing(Discount::getRate));
+        return discounts;
+    }
+
+    /**
+     * Récupère tous les Discount et les trie par ordre décroissant de taux de
+     * réduction.
+     *
+     * @return Une liste triée par ordre décroissant des objets Discount.
+     */
+    public List<Discount> getAllDiscountsDesc() {
+        List<Discount> discounts = getAllDiscounts();
+        discounts.sort(Comparator.comparing(Discount::getRate).reversed());
+        return discounts;
     }
 
     public Discount findById(String code) {

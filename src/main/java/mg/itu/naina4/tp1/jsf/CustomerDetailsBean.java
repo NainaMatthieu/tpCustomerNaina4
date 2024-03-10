@@ -70,6 +70,12 @@ public class CustomerDetailsBean implements Serializable {
      * Retourne la liste de tous les Discount.
      */
     public List<Discount> getDiscounts() {
+        /*
+        //Pour le tri croissant 
+        return discountManager.getAllDiscountsAsc();
+        //Pour le tri descroissant
+        return discountManager.getAllDiscountsDesc();
+        */
         return discountManager.getAllDiscounts();
     }
 }
