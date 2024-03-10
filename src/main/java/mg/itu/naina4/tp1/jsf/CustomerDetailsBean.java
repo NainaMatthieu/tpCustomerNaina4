@@ -9,8 +9,11 @@ import java.io.Serializable;
 import jakarta.inject.Inject;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
+import java.util.List;
 import mg.itu.naina4.tp1.entity.Customer;
+import mg.itu.naina4.tp1.entity.Discount;
 import mg.itu.naina4.tp1.service.CustomerManager;
+import mg.itu.naina4.tp1.service.DiscountManager;
 
 /**
  *
@@ -25,6 +28,9 @@ public class CustomerDetailsBean implements Serializable {
 
     @Inject
     private CustomerManager customerManager;
+
+    @Inject
+    private DiscountManager discountManager;
 
     public int getIdCustomer() {
         return idCustomer;
@@ -60,4 +66,10 @@ public class CustomerDetailsBean implements Serializable {
         this.customer = customerManager.findById(idCustomer);
     }
 
+    /**
+     * Retourne la liste de tous les Discount.
+     */
+    public List<Discount> getDiscounts() {
+        return discountManager.getAllDiscounts();
+    }
 }
